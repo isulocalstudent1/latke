@@ -121,15 +121,15 @@ public class Cookie {
         sb.append(escape(jo.getString("name")));
         sb.append("=");
         sb.append(escape(jo.getString("value")));
-        if (jo.has("expires")) {
+        if (jo.containsKey("expires")) {
             sb.append(";expires=");
             sb.append(jo.getString("expires"));
         }
-        if (jo.has("domain")) {
+        if (jo.containsKey("domain")) {
             sb.append(";domain=");
             sb.append(escape(jo.getString("domain")));
         }
-        if (jo.has("path")) {
+        if (jo.containsKey("path")) {
             sb.append(";path=");
             sb.append(escape(jo.getString("path")));
         }

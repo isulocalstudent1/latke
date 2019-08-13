@@ -170,7 +170,7 @@ public final class JdbcRepository implements Repository {
     private String buildAddSql(final JSONObject jsonObject, final List<Object> paramlist, final StringBuilder sql) {
         String ret = null;
 
-        if (!jsonObject.has(Keys.OBJECT_ID)) {
+        if (!jsonObject.containsKey(Keys.OBJECT_ID)) {
             if (!(KEY_GEN instanceof DBKeyGenerator)) {
                 ret = (String) KEY_GEN.gen();
                 jsonObject.put(Keys.OBJECT_ID, ret);

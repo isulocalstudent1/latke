@@ -840,7 +840,7 @@ public class JSONObject {
      *            A key string.
      * @return true if the key exists in the JSONObject.
      */
-    public boolean has(String key) {
+    public boolean containsKey(String key) {
         return this.map.containsKey(key);
     }
 

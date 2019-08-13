@@ -126,13 +126,13 @@ public class HTTP {
      */
     public static String toString(JSONObject jo) throws JSONException {
         StringBuilder       sb = new StringBuilder();
-        if (jo.has("Status-Code") && jo.has("Reason-Phrase")) {
+        if (jo.containsKey("Status-Code") && jo.containsKey("Reason-Phrase")) {
             sb.append(jo.getString("HTTP-Version"));
             sb.append(' ');
             sb.append(jo.getString("Status-Code"));
             sb.append(' ');
             sb.append(jo.getString("Reason-Phrase"));
-        } else if (jo.has("Method") && jo.has("Request-URI")) {
+        } else if (jo.containsKey("Method") && jo.containsKey("Request-URI")) {
             sb.append(jo.getString("Method"));
             sb.append(' ');
             sb.append('"');
